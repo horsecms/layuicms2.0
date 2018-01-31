@@ -20,19 +20,19 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 			if(json == "contentManagement"){
 				dataStr = data.contentManagement;
 				//重新渲染左侧菜单
-				tab.render();
+				tab.render(dataStr);
 			}else if(json == "memberCenter"){
 				dataStr = data.memberCenter;
 				//重新渲染左侧菜单
-				tab.render();
+				tab.render(dataStr);
 			}else if(json == "systemeSttings"){
 				dataStr = data.systemeSttings;
 				//重新渲染左侧菜单
-				tab.render();
+				tab.render(dataStr);
 			}else if(json == "seraphApi"){
                 dataStr = data.seraphApi;
                 //重新渲染左侧菜单
-                tab.render();
+                tab.render(dataStr);
             }
 		})
 	}

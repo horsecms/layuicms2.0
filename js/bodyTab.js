@@ -81,8 +81,7 @@ layui.define(["element","jquery"],function(exports){
         return ulHtml;
     }
 	//获取二级菜单数据
-	Tab.prototype.render = function() {
-        var _this = this;
+	Tab.prototype.render = function(dataStr) {
 		//显示左侧菜单
 		var _this = this;
 		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a href="javascript:;" data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>后台首页</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
