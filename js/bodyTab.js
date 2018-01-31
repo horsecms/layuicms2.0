@@ -307,23 +307,25 @@ layui.define(["element","jquery"],function(exports){
 		//删除tab后重置session中的menu和curmenu
 		liIndex = $(this).parent("li").index();
 		var menu = JSON.parse(window.sessionStorage.getItem("menu"));
-		//获取被删除元素
-		delMenu = menu[liIndex-1];
-		var curmenu = window.sessionStorage.getItem("curmenu")=="undefined" ? undefined : window.sessionStorage.getItem("curmenu")=="" ? '' : JSON.parse(window.sessionStorage.getItem("curmenu"));
-		if(JSON.stringify(curmenu) != JSON.stringify(menu[liIndex-1])){  //如果删除的不是当前选中的tab
-			// window.sessionStorage.setItem("curmenu",JSON.stringify(curmenu));
-			curNav = JSON.stringify(curmenu);
-		}else{
-			if($(this).parent("li").length > liIndex){
-				window.sessionStorage.setItem("curmenu",curmenu);
-				curNav = curmenu;
-			}else{
-				window.sessionStorage.setItem("curmenu",JSON.stringify(menu[liIndex-1]));
-				curNav = JSON.stringify(menu[liIndex-1]);
-			}
-		}
-		menu.splice((liIndex-1), 1);
-		window.sessionStorage.setItem("menu",JSON.stringify(menu));
+		if(menu != null) {
+            //获取被删除元素
+            delMenu = menu[liIndex - 1];
+            var curmenu = window.sessionStorage.getItem("curmenu") == "undefined" ? undefined : window.sessionStorage.getItem("curmenu") == "" ? '' : JSON.parse(window.sessionStorage.getItem("curmenu"));
+            if (JSON.stringify(curmenu) != JSON.stringify(menu[liIndex - 1])) {  //如果删除的不是当前选中的tab
+                // window.sessionStorage.setItem("curmenu",JSON.stringify(curmenu));
+                curNav = JSON.stringify(curmenu);
+            } else {
+                if ($(this).parent("li").length > liIndex) {
+                    window.sessionStorage.setItem("curmenu", curmenu);
+                    curNav = curmenu;
+                } else {
+                    window.sessionStorage.setItem("curmenu", JSON.stringify(menu[liIndex - 1]));
+                    curNav = JSON.stringify(menu[liIndex - 1]);
+                }
+            }
+            menu.splice((liIndex - 1), 1);
+            window.sessionStorage.setItem("menu", JSON.stringify(menu));
+        }
 		element.tabDelete("bodyTab",$(this).parent("li").attr("lay-id")).init();
 		bodyTab.tabMove();
 	})
