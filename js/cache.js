@@ -107,7 +107,8 @@ layui.use(['form','jquery',"layer"],function() {
             }
         }
     });
-    $(document).on('keydown', function() {
+    $(document).on('keydown', function(event) {
+        var event = event || window.event;
         if(event.keyCode == 13) {
             $("#unlock").click();
         }
