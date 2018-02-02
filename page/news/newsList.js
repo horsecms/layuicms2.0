@@ -103,7 +103,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             data = checkStatus.data,
             newsId = [];
         if(data.length > 0) {
-            for (let i in data) {
+            for (var i in data) {
                 newsId.push(data[i].newsId);
             }
             layer.confirm('确定删除选中的文章？', {icon: 3, title: '提示信息'}, function (index) {

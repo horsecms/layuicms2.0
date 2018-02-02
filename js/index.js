@@ -158,7 +158,7 @@ function donation(){
 //图片管理弹窗
 function showImg(){
     $.getJSON('json/images.json', function(json){
-        let res = json;
+        var res = json;
         layer.photos({
             photos: res,
             anim: 5

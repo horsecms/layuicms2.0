@@ -88,7 +88,7 @@ layui.use(['form','layer','laydate','table','upload'],function(){
             data = checkStatus.data,
             linkId = [];
         if(data.length > 0) {
-            for (let i in data) {
+            for (var i in data) {
                 linkId.push(data[i].newsId);
             }
             layer.confirm('确定删除选中的友链？', {icon: 3, title: '提示信息'}, function (index) {
