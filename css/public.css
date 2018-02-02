@@ -59,29 +59,28 @@ form input.layui-input[disabled]{ background:#f2f2f2; color:#595963!important; }
 .multiSelect a i:hover{ background-color:#545556;}
 /*404页面*/
 .noFind{ text-align:center; padding-top:2%;}
-.noFind i{ line-height:1em; font-size:14em !important; color: #393D50; display:block;}
-.noFind .page_icon{ font-size:12em !important; animation:pageGo 0.3s ease-in 0.3s forwards; -webkit-animation:pageGo 0.3s ease-in 0.3s forwards; -o-animation:pageGo 0.3s ease-in 0.3s forwards; -moz-animation:pageGo 0.3s ease-in 0.3s forwards;}
-.noFind .ufo_icon{ animation:ufo 1s ease-in 0.6s forwards; -webkit-animation:ufo 1s ease-in 0.6s forwards; -o-animation:ufo 1s ease-in 0.6s forwards; -moz-animation:ufo 1s ease-in 0.6s forwards;}
-.page404{ opacity:0; font-size:0 !important; animation:page404 0.5s ease-in 1.7s forwards; -webkit-animation:page404 0.5s ease-in 1.7s forwards; -o-animation:page404 0.5s ease-in 1.7s forwards; -moz-animation:page404 0.5s ease-in 1.7s forwards;}
+.noFind i{ line-height:1em; font-size:12em !important; color: #393D50; display:block;}
+.ufo{ text-align:center; height:100%; position:relative;}
+.noFind .page_icon,.noFind .ufo_icon{ opacity:1; position:absolute; left:50%; transform:translateX(-50%); -ms-transform:translateX(-50%); -moz-transform:translateX(-50%); -webkit-transform:translateX(-50%); -o-transform:translateX(-50%);}
+.noFind .page_icon{ top:300px; animation:pageGo 0.3s ease-in 0.3s forwards; -webkit-animation:pageGo 0.3s ease-in 0.3s forwards; -o-animation:pageGo 0.3s ease-in 0.3s forwards; -moz-animation:pageGo 0.3s ease-in 0.3s forwards;}
+.noFind .ufo_icon{ top:100px; animation:ufo 1s ease-in 0.6s forwards; -webkit-animation:ufo 1s ease-in 0.6s forwards; -o-animation:ufo 1s ease-in 0.6s forwards; -moz-animation:ufo 1s ease-in 0.6s forwards;}
+.page404{ margin-top:10%; opacity:0; font-size:0; animation:page404 0.5s ease-in 1.7s forwards; -webkit-animation:page404 0.5s ease-in 1.7s forwards; -o-animation:page404 0.5s ease-in 1.7s forwards; -moz-animation:page404 0.5s ease-in 1.7s forwards;}
 .page404 p{ font-size: 20px; font-weight: 300; color: #999;}
 /*页面被吸走*/
-@keyframes pageGo{from{font-size: 12em; margin-top: 0;} to{font-size: 0; margin-top: -130px}}
-@-moz-keyframes pageGo{from{font-size: 12em; margin-top: 0;} to{font-size: 0; margin-top: -130px}}
-@-webkit-keyframes pageGo{from{font-size: 12em; margin-top: 0;} to{font-size: 0; margin-top: -130px}}
-@-o-keyframes pageGo{from{font-size: 12em; margin-top: 0;} to{font-size: 0; margin-top: -130px}}
+@keyframes pageGo{from{font-size: 12em; top:300px;} to{font-size:0; opacity:0; top: 100px;}}
+@-moz-keyframes pageGo{from{font-size: 12em; top:300px;} to{font-size:0; opacity:0; top:100px}}
+@-webkit-keyframes pageGo{from{font-size: 12em; top:300px;} to{font-size:0; opacity:0; top:100px}}
+@-o-keyframes pageGo{from{font-size: 12em; top:300px;} to{font-size:0; opacity:0; top:100px}}
 /*ufo飞走*/
-@keyframes ufo{0%{font-size: 14em; margin-top: 0;} 20%{font-size: 12em; margin:-20px 0 0;} 100%{font-size:0; margin:-150px 0 0 100%;}}
-@-moz-keyframes ufo{0%{font-size: 14em; margin-top: 0;} 20%{font-size: 12em; margin:-20px 0 0;} 100%{font-size:0; margin:-150px 0 0 100%;}}
-@-webkit-keyframes ufo{0%{font-size: 14em; margin-top: 0;} 20%{font-size: 12em; margin:-20px 0 0;} 100%{font-size:0; margin:-150px 0 0 100%;}}
-@-o-keyframes ufo{0%{font-size: 14em; margin-top: 0;} 20%{font-size: 12em; margin:-20px 0 0;} 100%{font-size:0; margin:-150px 0 0 100%;}}
+@keyframes ufo{0%{font-size: 14em; top:100px;} 20%{font-size: 12em; top:50px;} 100%{font-size:0; opacity:0; top:-100px; left:80%;}}
+@-moz-keyframes ufo{0%{font-size: 14em; top:100px;} 20%{font-size: 12em;  top:50px;} 100%{font-size:0; opacity:0; top:-100px; left:80%;}}
+@-webkit-keyframes ufo{0%{font-size: 14em; top:100px;} 20%{font-size: 12em;  top:50px;} 100%{font-size:0; opacity:0; top:-100px; left:80%;}}
+@-o-keyframes ufo{0%{font-size: 14em; top:100px;} 20%{font-size: 12em; top:50px;} 100%{font-size:0; opacity:0; top:-100px; left:80%;}}
 /*404显示*/
 @keyframes page404{from{opacity:0; font-size:2em;} to{opacity:1;font-size:2em;}}
 @-moz-keyframes page404{from{opacity:0; font-size:2em;} to{opacity:1;font-size:2em;}}
 @-webkit-keyframes page404{from{opacity:0; font-size:2em;} to{opacity:1;font-size:2em;}}
 @-o-keyframes page404{from{opacity:0; font-size:2em;} to{opacity:1;font-size:2em;}}
-/*500页面*/
-.page500{ padding-top: 5%; text-align:center;}
-.page500 i{ font-size:26em; line-height:1em; color:#393D50;}
 /*图标管理*/
 .iconsLength{ margin:0 5px;}
 .icons li{  margin:5px 0; text-align:center; height:120px; cursor:pointer;}
