@@ -47,4 +47,4 @@ http://fly.layui.com/case/u/3198216
 ### 开源协议
 MIT License
 ### 在线预览
-http://layuicms.gitee.io/layuicms2.0
+http://layuicms.gitee.io/layuicms2.0/index.html
