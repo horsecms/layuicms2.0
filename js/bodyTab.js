@@ -102,6 +102,7 @@ layui.define(["element","jquery"],function(exports){
 	Tab.prototype.set = function(option) {
 		var _this = this;
 		$.extend(true, _this.tabConfig, option);
+		_this.tabMove();
 		return _this;
 	};
 
@@ -188,13 +189,14 @@ layui.define(["element","jquery"],function(exports){
 
 	//顶部窗口移动
 	Tab.prototype.tabMove = function(){
-		$(window).on("resize",function(){
+		$(window).on("resize",function(event){
 			var topTabsBox = $("#top_tabs_box"),
 				topTabsBoxWidth = $("#top_tabs_box").width(),
 				topTabs = $("#top_tabs"),
 				topTabsWidth = $("#top_tabs").width(),
 				tabLi = topTabs.find("li.layui-this"),
-				top_tabs = document.getElementById("top_tabs");
+				top_tabs = document.getElementById("top_tabs"),
+				event = event || window.event;
 
 			if(topTabsWidth > topTabsBoxWidth){
 				if(tabLi.position().left > topTabsBoxWidth || tabLi.position().left+topTabsBoxWidth > topTabsWidth){
@@ -221,9 +223,9 @@ layui.define(["element","jquery"],function(exports){
 				    dx = top_tabs.offsetLeft;
 				}
 				function move(){
-					var self=this;
-					window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
-				    if(flag){
+					var self = this;
+                    if(flag){
+						window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
 				        var touch ;
 				        if(event.touches){
 				            touch = event.touches[0];
