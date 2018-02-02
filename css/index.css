@@ -106,6 +106,7 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 .closeBox a span.layui-nav-more.layui-nav-mored{ border-color:transparent transparent #333;}
 /*功能设定*/
 .functionSrtting_box{ padding-top:15px;}
+.functionSrtting_box .layui-form-label{ width:81px;}
 .functionSrtting_box .layui-word-aux{ position:absolute;left:60px; top:9px; font-size: 12px;}
 /*换肤*/
 .skins_box{ padding:10px 34px 0; }
