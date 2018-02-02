@@ -33,7 +33,7 @@ layui.define(["element","jquery"],function(exports){
                 ulHtml += '<li class="layui-nav-item">';
             }
             if(data[i].children != undefined && data[i].children.length > 0){
-                ulHtml += '<a href="javascript:;">';
+                ulHtml += '<a>';
                 if(data[i].icon != undefined && data[i].icon != ''){
                     if(data[i].icon.indexOf("icon-") != -1){
                         ulHtml += '<i class="seraph '+data[i].icon+'" data-icon="'+data[i].icon+'"></i>';
@@ -47,9 +47,9 @@ layui.define(["element","jquery"],function(exports){
                 ulHtml += '<dl class="layui-nav-child">';
                 for(var j=0;j<data[i].children.length;j++){
                     if(data[i].children[j].target == "_blank"){
-                        ulHtml += '<dd><a href="javascript:;" data-url="'+data[i].children[j].href+'" target="'+data[i].children[j].target+'">';
+                        ulHtml += '<dd><a data-url="'+data[i].children[j].href+'" target="'+data[i].children[j].target+'">';
                     }else{
-                        ulHtml += '<dd><a href="javascript:;" data-url="'+data[i].children[j].href+'">';
+                        ulHtml += '<dd><a data-url="'+data[i].children[j].href+'">';
                     }
                     if(data[i].children[j].icon != undefined && data[i].children[j].icon != ''){
                         if(data[i].children[j].icon.indexOf("icon-") != -1){
@@ -63,9 +63,9 @@ layui.define(["element","jquery"],function(exports){
                 ulHtml += "</dl>";
             }else{
                 if(data[i].target == "_blank"){
-                    ulHtml += '<a href="javascript:;" data-url="'+data[i].href+'" target="'+data[i].target+'">';
+                    ulHtml += '<a data-url="'+data[i].href+'" target="'+data[i].target+'">';
                 }else{
-                    ulHtml += '<a href="javascript:;" data-url="'+data[i].href+'">';
+                    ulHtml += '<a data-url="'+data[i].href+'">';
                 }
                 if(data[i].icon != undefined && data[i].icon != ''){
                     if(data[i].icon.indexOf("icon-") != -1){
@@ -84,7 +84,7 @@ layui.define(["element","jquery"],function(exports){
 	Tab.prototype.render = function() {
 		//显示左侧菜单
 		var _this = this;
-		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a href="javascript:;" data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>后台首页</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
+		$(".navBar ul").html('<li class="layui-nav-item layui-this"><a data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>后台首页</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
 			$(".navBar").height($(window).height()-210);
@@ -102,7 +102,6 @@ layui.define(["element","jquery"],function(exports){
 	Tab.prototype.set = function(option) {
 		var _this = this;
 		$.extend(true, _this.tabConfig, option);
-		_this.tabMove();
 		return _this;
 	};
 
@@ -276,6 +275,14 @@ layui.define(["element","jquery"],function(exports){
 			}
 		}).resize();
 	}
+
+    //优化调出控制台时窗口未执行tabMove方法造成窗口居左无法显示全部
+    $(document).on('keydown', function(event) {
+        var event = event || window.event;
+        if(event.keyCode == 123) {
+            bodyTab.tabMove();
+        }
+    });
 
     //切换后获取当前窗口的内容
 	$("body").on("click",".top_tab li",function(){

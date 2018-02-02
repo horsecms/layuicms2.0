@@ -2,6 +2,7 @@
 .header .layui-nav-child{ z-index:99999; top:60px; left: auto; right: 0;}
 .seraph{ font-size:16px !important;}
 .main_body{ min-width:320px; }
+.layui-nav .layui-nav-item a{ cursor:pointer;}
 .layui-nav .layui-nav-item>a{ color:rgba(255,255,255,1); max-height:60px;}
 .layui-layer-tab .layui-layer-title span{ padding:0 !important;}
 iframe{ position:absolute; height:100%; width:100%; border:none;}
