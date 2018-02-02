@@ -3,6 +3,8 @@
 ```
 ### 为我点赞
 http://fly.layui.com/case/u/3198216
+### 在线预览
+http://layuicms.gitee.io/layuicms2.0/index.html
 ```
 此模版继续沿用原有规则，即学习交流完全免费，商业用途联系作者授权。
 技术交流及商业授权联系，企鹅群：576881857
@@ -46,5 +48,3 @@ http://fly.layui.com/case/u/3198216
 - “图片管理”页面新增“上传新图片”和“图片展示【即layer.photo】”功能。【由于弹层的展示获取的是接口中的数据，所以弹层不会展示新上传的图片，当然实际开发中不会有这个问题】
 ### 开源协议
 MIT License
-### 在线预览
-http://layuicms.gitee.io/layuicms2.0/index.html
