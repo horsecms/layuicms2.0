@@ -276,14 +276,6 @@ layui.define(["element","jquery"],function(exports){
 		}).resize();
 	}
 
-    //优化调出控制台时窗口未执行tabMove方法造成窗口居左无法显示全部
-    $(document).on('keydown', function(event) {
-        var event = event || window.event;
-        if(event.keyCode == 123) {
-            bodyTab.tabMove();
-        }
-    });
-
     //切换后获取当前窗口的内容
 	$("body").on("click",".top_tab li",function(){
 		var curmenu = '';
