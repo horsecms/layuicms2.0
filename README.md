@@ -4,7 +4,7 @@
 ### 为我点赞
 http://fly.layui.com/case/u/3198216
 ### 在线预览
-http://layuicms.gitee.io/layuicms2.0/index.html
+http://www.layuicms.com/v2/index.html
 ```
 此模版继续沿用原有规则，即学习交流完全免费，商业用途联系作者授权。
 技术交流及商业授权联系，企鹅群：576881857
