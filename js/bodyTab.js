@@ -210,7 +210,7 @@ layui.define(["element","jquery"],function(exports){
 				    y:0
 				}
 				var nx,dx,x ;
-				function down(){
+				function down(event){
 				    flag = true;
 				    var touch ;
 				    if(event.touches){
@@ -221,7 +221,7 @@ layui.define(["element","jquery"],function(exports){
 				    cur.x = touch.clientX;
 				    dx = top_tabs.offsetLeft;
 				}
-				function move(){
+				function move(event){
 					var self = this;
                     if(flag){
 						window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
